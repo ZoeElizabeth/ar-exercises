@@ -29,7 +29,8 @@ yaletown = Store.create name: 'Yaletown', annual_revenue: 430000, mens_apparel: 
 #     p "#{store.name} makes #{store.annual_revenue} annually"
 # end
 
-# @womens_stores = Store.where(womens_apparel: 'true').where("annual_revenue >= ?", 1000000)
+@womens_stores = Store.where(womens_apparel: 'true').where("annual_revenue >= ?", 1000000)
+
 @womens_stores = Store.where(womens_apparel: 'true', annual_revenue: 1000000..Float::INFINITY)
 
 @womens_stores.each do |store|
